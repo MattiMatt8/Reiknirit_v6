@@ -8,9 +8,9 @@ with open("triangle67.txt","r") as file:
         data.append(list(map(int, x)))
 
 def triangle_v2(data,row=0,column=0,memo={}):
-    if row == len(data):
-        return 0
     d = data[row]
+    if row == len(data)-1:
+        return d[column]
     summa = 0
     if (str(row+1) + "," + str(column)) in memo:
         summa1 = memo[str(row+1) + "," + str(column)]
